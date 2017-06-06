@@ -1,4 +1,6 @@
-# README
+# Durax
+
+Durax is a Hyrax-based repository application for the Duke University Libraries.
 
 ## Prerequisites
 
