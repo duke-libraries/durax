@@ -4,7 +4,7 @@ Durax is a Hyrax-based repository application for the Duke University Libraries.
 
 ## Prerequisites
 
-See the "Getting started" section of the README at https://github.com/samvera-labs/hyrax .
+See the "Getting started" section of the README at https://github.com/samvera-labs/hyrax .  For development purposes, you can ignore the prerequisites related to Fedora, Solr, and the SQL RDMS -- development/testing instances of Fedora and Solr are provided and SQLite can be used as the database.
 
 ## Setup
 
