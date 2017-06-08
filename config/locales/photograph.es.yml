@@ -1,0 +1,10 @@
+es:
+  hyrax:
+    icons:
+      photograph:     'fa fa-file-text-o'
+    select_type:
+      photograph:
+        # TODO: translate `human_name` into Spanish
+        name:               "Photograph"
+        # TODO: translate `human_name` into Spanish
+        description:        "Photograph trabajos"
