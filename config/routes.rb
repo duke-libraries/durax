@@ -1,3 +1,5 @@
+require 'resque/server'
+
 Rails.application.routes.draw do
 
   mount Blacklight::Engine => '/'
@@ -7,6 +9,9 @@ Rails.application.routes.draw do
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
   end
+
+  # TODO: Restrict access to this -- cf. dul-hydra
+  mount Resque::Server, at: '/queues'
 
   devise_for :users
   mount Qa::Engine => '/authorities'
