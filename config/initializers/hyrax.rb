@@ -53,7 +53,7 @@ Hyrax.config do |config|
   # config.persistent_hostpath = 'http://localhost/files/'
 
   # If you have ffmpeg installed and want to transcode audio and video uncomment this line
-  # config.enable_ffmpeg = true
+  config.enable_ffmpeg = true
 
   # Hyrax uses NOIDs for files and collections instead of Fedora UUIDs
   # where NOID = 10-character string and UUID = 32-character string w/ hyphens
@@ -75,7 +75,7 @@ Hyrax.config do |config|
   config.fits_path = ENV['FITS_HOME'].present? ? File.join(ENV['FITS_HOME'], 'fits.sh') : 'fits.sh'
 
   # Path to the file derivatives creation tool
-  # config.libreoffice_path = "soffice"
+  config.libreoffice_path = "soffice"
 
   # How many seconds back from the current time that we should show by default of the user's activity on the user's dashboard
   # config.activity_to_show_default_seconds_since_now = 24*60*60
