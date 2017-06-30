@@ -25,4 +25,10 @@ class SolrDocument
   # Do content negotiation for AF models. 
 
   use_extension( Hydra::ContentNegotiation )
+
+  # Ayse 21706222for customie metadata
+  def contact_email
+    self[Solrizer.solr_name('contact_email')]
+  end
+
 end
