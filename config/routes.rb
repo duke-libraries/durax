@@ -1,6 +1,7 @@
 require 'resque/server'
 
 Rails.application.routes.draw do
+        mount BrowseEverything::Engine => '/browse'
 
   mount Blacklight::Engine => '/'
 
