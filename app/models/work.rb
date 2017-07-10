@@ -8,4 +8,9 @@ class Work < ActiveFedora::Base
   validates :title, presence: { message: 'Your work must have a title.' }
   
   self.human_readable_type = 'Work'
+
+  # customizing metadata
+  property :contact_email, predicate: ::RDF::Vocab::VCARD.hasEmail, multiple: false do |index|
+    index.as :stored_searchable
+  end
 end
