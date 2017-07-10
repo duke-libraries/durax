@@ -26,9 +26,24 @@ class SolrDocument
 
   use_extension( Hydra::ContentNegotiation )
 
-  # Ayse 21706222for customie metadata
   def contact_email
     self[Solrizer.solr_name('contact_email')]
+  end
+
+  def curator_email
+    self[Solrizer.solr_name('curator_email')]
+  end
+
+  def based_near
+    self[Solrizer.solr_name('based_near')]
+  end
+
+  def contact_telephone
+    self[Solrizer.solr_name('contact_telephone')]
+  end
+
+  def department
+    self[Solrizer.solr_name('department')]
   end
 
 end

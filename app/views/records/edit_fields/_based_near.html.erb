@@ -1,0 +1,13 @@
+<% # added property -- ths one didn't work % >
+#< % #record.based_near.each do |bn| % >
+ # <span itemprop="contentLocation" itemscope itemtype="http://schema.org/Place">
+  #  <span itemprop="name"><%= #link_to_facet(bn, Solrizer.solr_name("based_near", :facetable)) % ></span>
+  # </span>
+  # <br />
+#< % #end %>
+
+<% # app/views/records/edit_fields/_contact_email.html.erb %>
+<%= f.input :based_near, as: :text, required: f.object.required?(key),
+  input_html: { class: 'form-control', multiple: false }
+%>
+

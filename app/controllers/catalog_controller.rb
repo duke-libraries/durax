@@ -85,9 +85,10 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name("embargo_release_date", :stored_sortable, type: :date), label: "Embargo release date", helper_method: :human_readable_date
     config.add_index_field solr_name("lease_expiration_date", :stored_sortable, type: :date), label: "Lease expiration date", helper_method: :human_readable_date
     
-    # Ayse 20170622 metadata custom
     config.add_index_field solr_name("contact_email", :stored_searchable), label: "Contact Email"
-
+    config.add_index_field solr_name("curator_email", :stored_searchable), label: "Curator Email"
+    config.add_index_field solr_name("contact_telephone", :stored_searchable), label: "Contact Telephone"
+    config.add_index_field solr_name("department", :stored_searchable), label: "Department"
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
@@ -98,7 +99,10 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name("creator", :stored_searchable)
     config.add_show_field solr_name("contributor", :stored_searchable)
     config.add_show_field solr_name("publisher", :stored_searchable)
-    config.add_show_field solr_name("based_near", :stored_searchable)
+
+    # config.add_show_field solr_name("based_near", :stored_searchable)
+    config.add_show_field solr_name("based_near", :stored_searchable), label: "Based near"
+
     config.add_show_field solr_name("language", :stored_searchable)
     config.add_show_field solr_name("date_uploaded", :stored_searchable)
     config.add_show_field solr_name("date_modified", :stored_searchable)
@@ -108,8 +112,11 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name("format", :stored_searchable)
     config.add_show_field solr_name("identifier", :stored_searchable)
 
-    # Ayse 20170622 metadata custom
     config.add_show_field solr_name("contact_email", :stored_searchable), label: "Contact Email"
+    config.add_show_field solr_name("curator_email", :stored_searchable), label: "Curator Email"
+    #config.add_show_field solr_name("based_near", :stored_searchable), label: "Based Near"
+    config.add_show_field solr_name("contact_telephone", :stored_searchable), label: "Contact Telephone"
+    config.add_show_field solr_name("department", :stored_searchable), label: "Department"
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields

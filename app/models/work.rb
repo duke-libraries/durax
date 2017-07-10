@@ -9,7 +9,7 @@ class Work < ActiveFedora::Base
   
   self.human_readable_type = 'Work'
 
-  # Ayse 20170622 - for customizing metadata
+  # customizing metadata
   property :contact_email, predicate: ::RDF::Vocab::VCARD.hasEmail, multiple: false do |index|
     index.as :stored_searchable
   end
