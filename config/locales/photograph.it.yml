@@ -1,0 +1,8 @@
+it:
+  hyrax:
+    icons:
+      photograph:     'fa fa-file-text-o'
+    select_type:
+      photograph:
+        name:               "Photograph"
+        description:        "Photograph opere"
