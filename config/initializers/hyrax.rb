@@ -1,4 +1,12 @@
 Hyrax.config do |config|
+  # Injected via `rails g hyrax:work Work`
+  config.register_curation_concern :work
+  # Injected via `rails g hyrax:work DataSet`
+  config.register_curation_concern :data_set
+  # Injected via `rails g hyrax:work Photograph`
+  config.register_curation_concern :photograph
+  # Injected via `rails g hyrax:work DigColl`
+  config.register_curation_concern :dig_coll
   # Register roles that are expected by your implementation.
   # @see Hyrax::RoleRegistry for additional details.
   # @note there are magical roles as defined in Hyrax::RoleRegistry::MAGIC_ROLES
@@ -26,10 +34,10 @@ Hyrax.config do |config|
   # Enable displaying usage statistics in the UI
   # Defaults to false
   # Requires a Google Analytics id and OAuth2 keyfile.  See README for more info
-  # config.analytics = false
+  config.analytics = true
 
   # Google Analytics tracking ID to gather usage statistics
-  # config.google_analytics_id = 'UA-99999999-1'
+  config.google_analytics_id = 'UA-102283131-1'
 
   # Date you wish to start collecting Google Analytic statistics for
   # Leaving it blank will set the start date to when ever the file was uploaded by
@@ -47,7 +55,7 @@ Hyrax.config do |config|
   # config.persistent_hostpath = 'http://localhost/files/'
 
   # If you have ffmpeg installed and want to transcode audio and video uncomment this line
-  # config.enable_ffmpeg = true
+  config.enable_ffmpeg = true
 
   # Hyrax uses NOIDs for files and collections instead of Fedora UUIDs
   # where NOID = 10-character string and UUID = 32-character string w/ hyphens
@@ -66,10 +74,10 @@ Hyrax.config do |config|
   # config.redis_namespace = "hyrax"
 
   # Path to the file characterization tool
-  # config.fits_path = "fits.sh"
+  config.fits_path = ENV['FITS_HOME'].present? ? File.join(ENV['FITS_HOME'], 'fits.sh') : 'fits.sh'
 
   # Path to the file derivatives creation tool
-  # config.libreoffice_path = "soffice"
+  config.libreoffice_path = "soffice"
 
   # How many seconds back from the current time that we should show by default of the user's activity on the user's dashboard
   # config.activity_to_show_default_seconds_since_now = 24*60*60
@@ -90,7 +98,7 @@ Hyrax.config do |config|
   # Should work creation require file upload, or can a work be created first
   # and a file added at a later time?
   # The default is true.
-  # config.work_requires_files = true
+  config.work_requires_files = false
 
   # Should a button with "Share my work" show on the front page to all users (even those not logged in)?
   # config.always_display_share_button = true

@@ -1,0 +1,10 @@
+zh:
+  hyrax:
+    icons:
+      photograph:     'fa fa-file-text-o'
+    select_type:
+      photograph:
+        # TODO: translate `human_name` into Chinese
+        name:               "Photograph"
+        # TODO: translate `human_name` into Chinese
+        description:        "Photograph 作品"
