@@ -1,8 +1,0 @@
-pt-BR:
-  hyrax:
-    icons:
-      dig_coll:     'fa fa-file-text-o'
-    select_type:
-      dig_coll:
-        name:               "Dig Coll"
-        description:        "Dig coll trabalhos"
