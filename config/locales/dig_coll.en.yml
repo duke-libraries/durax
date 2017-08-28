@@ -1,8 +1,0 @@
-en:
-  hyrax:
-    icons:
-      dig_coll:     'fa fa-file-text-o'
-    select_type:
-      dig_coll:
-        name:               "Dig coll work"
-        description:        "Durax's Digital Collection work type"

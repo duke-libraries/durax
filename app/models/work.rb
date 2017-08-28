@@ -10,11 +10,6 @@ class Work < ActiveFedora::Base
 
   self.human_readable_type = 'Work'
 
-  # customizing metadata
-  property :contact_email, predicate: ::RDF::Vocab::VCARD.hasEmail, multiple: false do |index|
-    index.as :stored_searchable
-  end
-
   # This must be included at the end, because it finalizes the metadata
   # schema (by adding accepts_nested_attributes)
   include ::Hyrax::BasicMetadata
